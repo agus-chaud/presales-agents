@@ -9,6 +9,7 @@ node_modules/
 venv/
 __pycache__/
 *.py[cod]
+.agents/rules/agente-readme-proyecto.md
 
 # Datos locales (base de datos SQLite)
 data/
