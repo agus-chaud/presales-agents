@@ -1,0 +1,48 @@
+# Secretos — NUNCA commitear
+.env
+.env.*
+
+
+# Dependencias
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Datos locales (base de datos SQLite)
+data/
+*.db
+*.db-shm
+*.db-wal
+
+# Compilación
+dist/
+build/
+coverage/
+htmlcov/
+
+# Credenciales de servicios externos
+service-account.json
+*.key
+*.pem
+
+# Skills locales (no subir a GitHub)
+.agents/skills/
+.claude/skills/
+.claude/skills/**
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs temporales
+*.log
