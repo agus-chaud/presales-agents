@@ -1,0 +1,21 @@
+project: presales-team
+version: "0.1.0"
+description: >
+  Equipo de agentes de IA para presales que corre localmente.
+  Recibe listas de empresas por Telegram, investiga, redacta mensajes
+  personalizados y entrega informes priorizados.
+
+stack:
+  language: typescript
+  runtime: node
+  module_system: esm
+  telegram: grammy
+  llm_primary: groq (llama-3.3-70b-versatile)
+  llm_fallback: openrouter (meta-llama/llama-3.1-8b-instruct:free)
+  database: better-sqlite3
+  dev_runner: tsx
+
+artifact_store:
+  mode: openspec
+
+workflow: agent-teams-lite/sdd

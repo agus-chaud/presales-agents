@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep -l \"Gentle\")",
+      "Bash(ls -la /c/Users/Dell/*.md)",
+      "Bash(find 'C:\\\\Users\\\\Dell\\\\Agus\\\\presales agents/src' -type f \\\\\\(-name *.ts -o -name *.tsx -o -name *.md \\\\\\))",
+      "Bash(find 'C:\\\\Users\\\\Dell\\\\Agus\\\\presales agents/src' -type f \\\\\\(-name *.ts -o -name *.js \\\\\\))",
+      "Bash(find 'C:\\\\Users\\\\Dell\\\\Agus\\\\presales agents' -type f \\\\\\(-name *prompt* -o -name *instruction* -o -name *CLAUDE* -o -name *.md \\\\\\) ! -path */node_modules/*)",
+      "Bash(npm run:*)",
+      "WebSearch",
+      "WebFetch(domain:www.iq4b.com)",
+      "WebFetch(domain:iq4b.com)",
+      "mcp__plugin_engram_engram__mem_search",
+      "Bash(npx skills:*)"
+    ]
+  }
+}

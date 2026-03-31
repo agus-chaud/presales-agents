@@ -1,0 +1,26 @@
+{
+  "name": "presales-team",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Equipo de agentes de IA para presales vía Telegram",
+  "scripts": {
+    "dev": "tsx --watch --env-file=.env src/index.ts",
+    "start": "tsx --env-file=.env src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --env-file=.env --import tsx --test"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.6.0",
+    "firebase-admin": "^13.7.0",
+    "grammy": "^1.30.0",
+    "groq-sdk": "^0.13.0",
+    "openai": "^4.67.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^22.9.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}
