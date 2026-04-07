@@ -7,6 +7,7 @@ import { logger } from '../utils/logger.js';
 import {
   CREATE_COMPANIES_TABLE,
   CREATE_INDEXES,
+  CREATE_LEAD_SIGNALS_TABLE,
   CREATE_MESSAGES_TABLE,
   CREATE_SESSIONS_TABLE,
 } from './schema.js';
@@ -45,6 +46,7 @@ export function initDatabase(): void {
     db.exec(CREATE_SESSIONS_TABLE);
     db.exec(CREATE_MESSAGES_TABLE);
     db.exec(CREATE_COMPANIES_TABLE);
+    db.exec(CREATE_LEAD_SIGNALS_TABLE);
     CREATE_INDEXES.forEach((idx) => db!.exec(idx));
 
     sqliteAvailable = true;

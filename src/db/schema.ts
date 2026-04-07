@@ -39,9 +39,33 @@ export const CREATE_COMPANIES_TABLE = `
   )
 `;
 
+export const CREATE_LEAD_SIGNALS_TABLE = `
+  CREATE TABLE IF NOT EXISTS lead_signals (
+    id                    INTEGER PRIMARY KEY AUTOINCREMENT,
+    signal_key            TEXT    NOT NULL UNIQUE,
+    post_url              TEXT    NOT NULL,
+    author                TEXT    NOT NULL,
+    company               TEXT,
+    text                  TEXT    NOT NULL,
+    signal_timestamp      TEXT    NOT NULL,
+    date_bucket           TEXT    NOT NULL,
+    engagement_likes      INTEGER NOT NULL DEFAULT 0,
+    engagement_comments   INTEGER NOT NULL DEFAULT 0,
+    engagement_reposts    INTEGER NOT NULL DEFAULT 0,
+    topic_signals         TEXT    NOT NULL DEFAULT '[]',
+    intent_signals        TEXT    NOT NULL DEFAULT '[]',
+    status                TEXT    NOT NULL DEFAULT 'new'
+                                      CHECK(status IN ('new','reviewed','discarded')),
+    created_at            TEXT    NOT NULL DEFAULT (datetime('now')),
+    updated_at            TEXT    NOT NULL DEFAULT (datetime('now'))
+  )
+`;
+
 export const CREATE_INDEXES = [
   `CREATE INDEX IF NOT EXISTS idx_messages_session ON messages(session_id)`,
   `CREATE INDEX IF NOT EXISTS idx_messages_created ON messages(created_at)`,
   `CREATE INDEX IF NOT EXISTS idx_companies_session ON companies(session_id)`,
   `CREATE INDEX IF NOT EXISTS idx_sessions_user ON sessions(user_id)`,
+  `CREATE INDEX IF NOT EXISTS idx_lead_signals_timestamp ON lead_signals(signal_timestamp DESC)`,
+  `CREATE INDEX IF NOT EXISTS idx_lead_signals_status ON lead_signals(status)`,
 ];

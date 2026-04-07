@@ -7,7 +7,7 @@
     "dev": "tsx --watch --env-file=.env src/index.ts",
     "start": "tsx --env-file=.env src/index.ts",
     "typecheck": "tsc --noEmit",
-    "test": "node --env-file=.env --import tsx --test"
+    "test": "node --env-file=.env --import tsx --test test/agentQueue.test.ts test/fetchWebpage.test.ts test/leadSignalsContract.test.ts test/leadSignalsRepo.test.ts test/parseToolArguments.test.ts test/telegramMarkdown.test.ts test/webSearch.test.ts"
   },
   "dependencies": {
     "better-sqlite3": "^9.6.0",
